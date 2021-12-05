@@ -8,13 +8,14 @@
 // volume.
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 // declare variables
 
 float baseEdge, height, surfaceArea;
 float surfaceArea1, surfaceArea2, surfaceArea3;
-float surfaceArea4, surfaceArea5, sAFinal, volume;
-float volume1, volume2, volume3, volumeFinal;
+float surfaceArea4, surfaceArea5, volume;
+float volume1, volume2, volume3;
 
 int main() {
   // get input from user
@@ -38,7 +39,6 @@ int main() {
   surfaceArea3 = 6 * baseEdge;
   surfaceArea4 = surfaceArea3 * height;
   surfaceArea5 = surfaceArea2 + surfaceArea4;
-  sAFinal = (round(surfaceArea5 * 100))/100;
 
   // calculate volume
 
@@ -46,13 +46,14 @@ int main() {
   volume1 = pow(baseEdge, 2);
   volume2 = volume1 * height;
   volume3 = volume * volume2;
-  volumeFinal = (round(volume3 * 100)) / 100;
 
   // display the results to the user
 
   std::cout << std::endl;
   std::cout << "\033[0;31m";
-  std::cout << "Surface area = " << sAFinal << units << "^2\n";
+  std::cout << "Surface area = " << std::fixed;
+  std::cout << std::setprecision(2) << surfaceArea5 << units << "^2\n";
   std::cout << "\033[0;32m";
-  std::cout << "Volume = " << volumeFinal << units << "^3\n";
+  std::cout << "Volume = " << std::fixed;
+  std::cout << std::setprecision(2) << volume3 << units << "^3\n";
 }
