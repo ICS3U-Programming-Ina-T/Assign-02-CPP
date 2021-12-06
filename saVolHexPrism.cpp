@@ -19,7 +19,6 @@ float volume1, volume2, volume3;
 
 int main() {
   // get input from user
-
   std::cout << "Today we will calculate the surface area and\n";
   std::cout << "volume of a hexagonal prism!\n";
   std::cout << std::endl;
